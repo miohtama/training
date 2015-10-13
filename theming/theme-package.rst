@@ -511,13 +511,27 @@ Breadcrumb & co
 ***************
 
 Plone provides some viewlets like the breadcrumb above the content area.
-To get this, we add a place holder with the CSS id "#above-content" into the theme, where we want to have this above -content stuff, for example right before the first row/box in the container:
+To get this, we add a place holder with the CSS id "#above-content" into the theme, where we want to have this above-content stuff, for example at the top of the ``div.container`` after:
 
 .. code-block:: html
 
-   <div class="row">
-       <div id="above-content" class="box"></div>
-   </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        ...
+    </nav>
+
+    <div class="container">
+
+        <!-- insert here -->
+
+goes this before the row/box.
+
+.. code-block:: html
+
+       <div class="row">
+           <div id="above-content" class="box"></div>
+       </div>
+
 
 This rule then takes the Plone breadcrumb & co over:
 
